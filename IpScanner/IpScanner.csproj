@@ -51,7 +51,7 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <PropertyGroup>
-    <ManifestCertificateThumbprint>350B49ED90CD326FB4C6EBD0C560AA327BCD1D88</ManifestCertificateThumbprint>
+    <ManifestCertificateThumbprint>981B382383E5A25E23280F149A0F9310C94EDC1D</ManifestCertificateThumbprint>
   </PropertyGroup>
   <PropertyGroup>
     <ManifestKeyFile>IpScanner_TemporaryKey.pfx</ManifestKeyFile>

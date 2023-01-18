@@ -97,16 +97,7 @@ namespace IpScanner
             }
             string macAddresses = GetMacByIp(lokaltxt.Text);
 
-            try
-            {
-                IPHostEntry hostEntry = Dns.GetHostEntry(lokaltxt.Text);
-                
-                Infotxt.Text =Environment.NewLine+ "HostName:" + hostEntry.HostName + Environment.NewLine + "IP ünvan:" + lokaltxt.Text+Environment.NewLine+ "MAC ünvan: "+macAddresses;
-            }
-            catch
-            {
-                Infotxt.Text =Environment.NewLine+"HostName:" + lokaltxt.Text+ Environment.NewLine + Environment.NewLine + "IP ünvan:" + lokaltxt.Text+Environment.NewLine+ "MAC ünvan: " +macAddresses;
-            }
+         
             //global IP
             var endpoint = "https://api.ipify.org/";
             var request = (HttpWebRequest)WebRequest.Create(endpoint);
@@ -123,16 +114,23 @@ namespace IpScanner
         {
             new Thread(() =>
               {
-                  Ping ping = new Ping();
-                  PingReply pingReply = ping.Send(PingIptxt.Text);
-                  if (pingReply.Status == IPStatus.Success)
+                  try
                   {
-                      pingoutputtxt.Text = "Address: " + Environment.NewLine + pingReply.Address + Environment.NewLine + Environment.NewLine + "Buffer" + Environment.NewLine + pingReply.Buffer.Length + "byte" + Environment.NewLine + Environment.NewLine + "Time" + Environment.NewLine + pingReply.RoundtripTime + Environment.NewLine + Environment.NewLine + "TTL" + Environment.NewLine + pingReply.Options.Ttl;
-                  }
-                  else
-                  {
-                      pingoutputtxt.Text = Environment.NewLine + "Status: " + Environment.NewLine + pingReply.Status;
+                      Ping ping = new Ping();
+                      PingReply pingReply = ping.Send(PingIptxt.Text);
+                      if (pingReply.Status == IPStatus.Success)
+                      {
+                          pingoutputtxt.Text = "Address: " + Environment.NewLine + pingReply.Address + Environment.NewLine + Environment.NewLine + "Buffer" + Environment.NewLine + pingReply.Buffer.Length + "byte" + Environment.NewLine + Environment.NewLine + "Time" + Environment.NewLine + pingReply.RoundtripTime + Environment.NewLine + Environment.NewLine + "TTL" + Environment.NewLine + pingReply.Options.Ttl;
+                      }
+                      else
+                      {
+                          pingoutputtxt.Text = Environment.NewLine + "Status: " + Environment.NewLine + pingReply.Status;
 
+                      }
+                  }
+                  catch(Exception ex)
+                  {
+                      MessageBox.Show(ex.Message);
                   }
               }).Start();
         }
@@ -473,5 +471,7 @@ namespace IpScanner
         {
             MessageBox.Show("Şirkət: AZERCHİP MMC" + Environment.NewLine + "Hazırlayanlar:Rauf Rufullayev və Vüsalə Zeynalova" + Environment.NewLine + Environment.NewLine + "© 2023");
         }
+
+       
     }
 }
