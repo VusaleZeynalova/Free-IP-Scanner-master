@@ -5,8 +5,6 @@ VisualStudioVersion = 16.0.31729.503
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "IpScanner", "IpScanner\IpScanner.csproj", "{BD72F731-F8AA-42B1-AECC-9B8BC7F64D91}"
 EndProject
-Project("{54435603-DBB4-11D2-8724-00A0C9A8B90C}") = "Setup", "Setup\Setup.vdproj", "{D036BD82-D9F5-4D9D-BC7D-1AAAD4392B89}"
-EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -17,8 +15,6 @@ Global
 		{BD72F731-F8AA-42B1-AECC-9B8BC7F64D91}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{BD72F731-F8AA-42B1-AECC-9B8BC7F64D91}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{BD72F731-F8AA-42B1-AECC-9B8BC7F64D91}.Release|Any CPU.Build.0 = Release|Any CPU
-		{D036BD82-D9F5-4D9D-BC7D-1AAAD4392B89}.Debug|Any CPU.ActiveCfg = Release
-		{D036BD82-D9F5-4D9D-BC7D-1AAAD4392B89}.Release|Any CPU.ActiveCfg = Release
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
